@@ -1,17 +1,14 @@
 const express = require ('express');
 const app = express();
-const path = require('path');
 
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 
-const routesMain = require("./routes/routesMain");
+const routesCanciones = require("./routes/routesCanciones");
+const routesAlbumes = require("./routes/routesAlbumes");
 
 
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
-
-app.use("/", routesMain);
-
+app.use("/canciones", routesCanciones);
+app.use("/albumes", routesAlbumes);
 
 app.listen(3010, ()=> {console.log('Servidor corriendo en el puerto 3010')});

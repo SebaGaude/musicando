@@ -1,3 +1,4 @@
+
 module.exports = function (sequelize, dataTypes) {
     let alias = 'Cancion';
 
@@ -14,12 +15,6 @@ module.exports = function (sequelize, dataTypes) {
         duracion: {
             type : dataTypes.INTEGER,
         },
-        created_at: {
-            type: 'TIMESTAMP',
-        },
-        updated_at: {
-            type: 'TIMESTAMP',
-        },
         genero_id: {
             type : dataTypes.INTEGER,
         },
@@ -35,7 +30,8 @@ module.exports = function (sequelize, dataTypes) {
     const config = {
 
         tableName:'canciones',
-        timestamps: false
+        timestamps: true,
+        underscored: true,
 
     };
 
